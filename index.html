@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Quản Lý Nhân Viên</title>
+</head>
+
+<body>
+    <main class="container">
+        <nav class="nav-bar">
+            <div class="search">
+                <input class="search-staff" type="text" name="search-staff" id="searchStaff" placeholder="Search Staff">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <div class="list">
+                <ul class="list-staff" id="listStaff"></ul>
+            </div>
+        </nav>
+        <div class="content-staff">
+            <section class="info" id="infoStaff">
+                <div class="content-avatar">
+                    <div class="img-avatar"></div>
+                    <button class="btn btn-choose">Choose</button>
+                </div>
+                <div class="content-info">
+                    <div class="information">
+                        <p>Frist Name:</p>
+                        <input class="input" type="text" name="FristName" id="fristName">
+                    </div>
+                    <div class="information">
+                        <p>Last Name:</p>
+                        <input class="input" type="text" name="LastName" id="lastName">
+                    </div>
+                    <div class="information">
+                        <p>Age:</p>
+                        <input class="input" type="text" name="Age" id="Age">
+                    </div>
+                    <div class="information">
+                        <p>Phone Number:</p>
+                        <input class="input" type="number" name="PhoneNumber" id="phoneNumber">
+                    </div>
+                    <div class="information">
+                        <p>Address:</p>
+                        <input class="input" type="text" name="Address" id="address">
+                    </div>
+                    <div class="information">
+                        <p>Email:</p>
+                        <input class="input" type="email" name="Email" id="email">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
