@@ -1,3 +1,5 @@
+- var _infoStaff = infomationStaff;
+
 doctype html
 head
   meta(charset='UTF-8')
@@ -7,11 +9,13 @@ head
   title Quản Lý Nhân Viên
 main.container
   nav.nav-bar
-    .search
-      input#searchStaff.search-staff(type='text', name='search-staff', placeholder='Search Staff')
+    form.search(action='/search', method='GET')
+      input#searchStaff.search-staff(type='text', name='searchStaff', placeholder='Search Staff')
       i.fa.fa-search(aria-hidden='true')
     .list
       ul#listStaff.list-staff
+        each istaff in _infoStaff
+          li= istaff.name
   .content-staff
     section#infoStaff.info
       .content-avatar
