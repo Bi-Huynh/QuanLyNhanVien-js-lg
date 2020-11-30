@@ -5,12 +5,11 @@ const port = 3000;
 app.set('view engine', 'pug');
 app.set("views", "./views");
 
-var staff = [
-    { url: 'http://', fristName: 'Huynh Trung', lastName: 'Duc' }
-];
 
+
+// trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
-    res.render('index1');
+    res.render('index');
 });
 
 

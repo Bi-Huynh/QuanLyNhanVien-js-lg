@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
+  link(rel='stylesheet', href='./index.css')
+  title Quản Lý Nhân Viên
+main.container
+  nav.nav-bar
+    .search
+      input#searchStaff.search-staff(type='text', name='search-staff', placeholder='Search Staff')
+      i.fa.fa-search(aria-hidden='true')
+    .list
+      ul#listStaff.list-staff
+  .content-staff
+    section#infoStaff.info
+      .content-avatar
+        .img-avatar
+        button.btn.btn-choose Choose
+      .content-info
+        .information
+          p Frist Name:
+          input#fristName.input(type='text', name='FristName')
+        .information
+          p Last Name:
+          input#lastName.input(type='text', name='LastName')
+        .information
+          p Age:
+          input#Age.input(type='text', name='Age')
+        .information
+          p Phone Number:
+          input#phoneNumber.input(type='number', name='PhoneNumber')
+        .information
+          p Address:
+          input#address.input(type='text', name='Address')
+        .information
+          p Email:
+          input#email.input(type='email', name='Email')
+script(src='./main.js')
