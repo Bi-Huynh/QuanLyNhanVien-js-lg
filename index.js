@@ -1,13 +1,20 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
+
+app.set('view engine', 'pug');
+app.set("views", "./views");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 const infomationStaff = [
     { id: 1, name: 'Duc' },
     { id: 2, name: 'Hung' }
 ]
 
-app.set('view engine', 'pug');
-app.set("views", "./views");
+
 
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
@@ -20,7 +27,13 @@ app.get('/search', (req, res) => {
     res.render('index', { infomationStaff: arrStaff });
 })
 
-app.post('/')
+app.get('/create', (req, res) => {
+    res.render('create');
+})
+
+app.post('/create', (req, res) => {
+    console.log(req.body);
+})
 
 app.listen(port, () => {
     console.log(`start ${port}`);
