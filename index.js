@@ -32,7 +32,11 @@ app.get('/create', (req, res) => {
 })
 
 app.post('/create', (req, res) => {
-    console.log(req.body);
+    let newStaff = {};
+    newStaff.id = infomationStaff[infomationStaff.length - 1].id + 1;
+    newStaff.name = req.body.nameStaff;
+    infomationStaff.push(newStaff);
+    res.redirect('/');
 })
 
 app.listen(port, () => {
