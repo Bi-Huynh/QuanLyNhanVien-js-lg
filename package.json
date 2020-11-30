@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Bi-Huynh/QuanLyNhanVien-js-lg#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "gulp-install": "^1.1.0",
     "pug": "^3.0.0"
   },
   "devDependencies": {
