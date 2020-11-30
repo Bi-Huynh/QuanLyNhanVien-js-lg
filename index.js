@@ -1,7 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const lowdb = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapters = new FileSync('db.json');
 const app = express();
 const port = 3000;
+const db = lowdb(adapters);
+db.defaults({ infomationStaff: [] }).write();
 
 app.set('view engine', 'pug');
 app.set("views", "./views");
