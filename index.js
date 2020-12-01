@@ -6,24 +6,23 @@ const adapters = new FileSync('db.json');
 const app = express();
 const port = 3000;
 const db = lowdb(adapters);
-db.defaults({ infomationStaff: [] }).write();
+db.defaults({ informationStaff: [] }).write();
 
 app.set('view engine', 'pug');
 app.set("views", "./views");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const infomationStaff = [
-    { id: 1, name: 'Duc' },
-    { id: 2, name: 'Hung' }
-]
-
+app.use(express.static('css'));
 
 
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
-    res.render('index', { infomationStaff: infomationStaff });
+    if (db.get('informationStaff').value().length == 0) {
+        res.render('index', { _informationStaff: {} });
+    } else {
+        res.render('index', { _informationStaff: db.get('informationStaff').value() });
+    }
 });
 
 app.get('/search', (req, res) => {
@@ -37,10 +36,7 @@ app.get('/create', (req, res) => {
 })
 
 app.post('/create', (req, res) => {
-    let newStaff = {};
-    newStaff.id = infomationStaff[infomationStaff.length - 1].id + 1;
-    newStaff.name = req.body.nameStaff;
-    infomationStaff.push(newStaff);
+    db.get('informationStaff').push(req.body.nameStaff);
     res.redirect('/');
 })
 

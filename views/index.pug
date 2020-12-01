@@ -1,11 +1,9 @@
-- var _infoStaff = infomationStaff;
-
 doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
-  link(rel='stylesheet', href='./index.css')
+  link(rel='stylesheet', href='/index.css')
   title Quản Lý Nhân Viên
 main.container
   nav.nav-bar
@@ -14,8 +12,8 @@ main.container
       i.fa.fa-search(aria-hidden='true')
     .list
       ul#listStaff.list-staff
-        each istaff in _infoStaff
-          li= istaff.name
+        each staff in _informationStaff
+          li= staff.name
   .content-staff
     section#infoStaff.info
       .content-avatar
