@@ -15,28 +15,30 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('css'));
 
+const informationStaff = db.get('informationStaff').value();
 
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
     if (db.get('informationStaff').value().length == 0) {
         res.render('index', { _informationStaff: {} });
     } else {
-        res.render('index', { _informationStaff: db.get('informationStaff').value() });
+        res.render('index', { _informationStaff: informationStaff });
     }
 });
 
 app.get('/search', (req, res) => {
     let query = req.query.searchStaff;
-    let arrStaff = infomationStaff.filter(staff => staff.name.toLowerCase().indexOf(query.toLowerCase()) !== -1);
-    res.render('index', { infomationStaff: arrStaff });
+    let arrStaff = informationStaff.filter(staff => staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    res.render('index', { _informationStaff: arrStaff });
 })
 
-app.get('/create', (req, res) => {
-    res.render('create');
+app.get('/users/create', (req, res) => {
+    res.render('users/create');
 })
 
-app.post('/create', (req, res) => {
-    db.get('informationStaff').push(req.body.nameStaff);
+app.post('/users/create', (req, res) => {
+    newStaff = req.body;
+    db.get('informationStaff').push(newStaff).write();
     res.redirect('/');
 })
 
