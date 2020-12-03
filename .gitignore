@@ -83,4 +83,9 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+<<<<<<< HEAD
 node_modules
+=======
+
+node_modules
+>>>>>>> feature/viet-file-js
