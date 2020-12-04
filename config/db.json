@@ -1,12 +1,15 @@
 {
   "informationStaff": [
     {
+      "id": 1,
       "nameStaff": "sdfsadf"
     },
     {
+      "id": 2,
       "nameStaff": "asdfasfd"
     },
     {
+      "id": 3,
       "nameStaff": "kljj"
     }
   ]

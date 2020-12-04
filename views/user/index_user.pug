@@ -13,8 +13,11 @@ main.container
       i.fa.fa-search(aria-hidden='true')
     .list
       ul#listStaff.list-staff
-        each staff in _informationStaff
-          li= staff.nameStaff
+        each staff in _listStaff
+          li
+            span= staff.nameStaff
+            span &nbsp;
+            a(href="/user/" + staff.id) View
   .content-staff
     section#infoStaff.info
       .content-avatar
@@ -23,7 +26,7 @@ main.container
       .content-info
         .information
           p Frist Name:
-          input#fristName.input(type='text', name='FristName')
+          input#fristName.input(type='text', name='FristName' placeholder= _informationStaff.nameStaff)
         .information
           p Last Name:
           input#lastName.input(type='text', name='LastName')
@@ -39,4 +42,4 @@ main.container
         .information
           p Email:
           input#email.input(type='email', name='Email') 
-      a#create.btn(href='/users/create') Create Staff
+      a#create.btn(href='/user/create_user') Create Staff

@@ -19,21 +19,27 @@ const informationStaff = db.get('informationStaff').value();
 
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
-    if (db.get('informationStaff').value().length == 0) {
-        res.render('user/index_user', { _informationStaff: {} });
+    if (informationStaff.length == 0) {
+        res.render('user/index_user', { _informationStaff: '', _listStaff: {} });
     } else {
-        res.render('user/index_user', { _informationStaff: informationStaff });
+        res.render('user/index_user', { _informationStaff: '', _listStaff: informationStaff });
     }
 });
 
 app.get('/search', (req, res) => {
     let query = req.query.searchStaff;
     let arrStaff = informationStaff.filter(staff => staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1);
-    res.render('user/index_user', { _informationStaff: arrStaff });
+    res.render('user/index_user', { _listStaff: arrStaff });
 })
 
 app.get('/user/create_user', (req, res) => {
     res.render('user/create_user');
+})
+
+app.get('/user/:userID', (req, res) => {
+    let userID = req.params.userID;
+    let user = informationStaff.find((staff) => staff.id == userID);
+    res.render('user/index_user', { _informationStaff: user, _listStaff: informationStaff });
 })
 
 app.post('/user/create_user', (req, res) => {
