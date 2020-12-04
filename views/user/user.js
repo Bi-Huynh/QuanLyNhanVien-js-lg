@@ -13,7 +13,7 @@ app.set("views", "./views");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('css'));
+
 
 const informationStaff = db.get('informationStaff').value();
 
