@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const lowdb = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
-const adapters = new FileSync('db.json');
+const adapters = new FileSync('config/db.json');
 const app = express();
 const port = 3000;
 const db = lowdb(adapters);
@@ -20,23 +20,23 @@ const informationStaff = db.get('informationStaff').value();
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
     if (db.get('informationStaff').value().length == 0) {
-        res.render('index', { _informationStaff: {} });
+        res.render('user/index_user', { _informationStaff: {} });
     } else {
-        res.render('index', { _informationStaff: informationStaff });
+        res.render('user/index_user', { _informationStaff: informationStaff });
     }
 });
 
 app.get('/search', (req, res) => {
     let query = req.query.searchStaff;
     let arrStaff = informationStaff.filter(staff => staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1);
-    res.render('index', { _informationStaff: arrStaff });
+    res.render('user/index_user', { _informationStaff: arrStaff });
 })
 
-app.get('/users/create', (req, res) => {
-    res.render('users/create');
+app.get('/user/create_user', (req, res) => {
+    res.render('user/create_user');
 })
 
-app.post('/users/create', (req, res) => {
+app.post('/user/create_user', (req, res) => {
     newStaff = req.body;
     db.get('informationStaff').push(newStaff).write();
     res.redirect('/');
