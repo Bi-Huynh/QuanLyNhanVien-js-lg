@@ -4,7 +4,7 @@
   "description": "Bài tập. Làm 1 chương trình nhỏ lưu trữ thông tin nhân viên và quản lý chúng.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon views/user/user.js",
+    "start": "nodemon views/main/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
