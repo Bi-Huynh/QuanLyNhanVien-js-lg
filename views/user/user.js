@@ -15,20 +15,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-const informationStaff = db.get('informationStaff').value();
+const informationStaff = db.get('informationStaff');
 
 // trang chủ, thông tin nhân viên
 app.get('/', (req, res) => {
-    if (informationStaff.length == 0) {
-        res.render('user/index_user', { _informationStaff: '', _listStaff: {} });
+    if (informationStaff.value().length == 0) {
+        res.render('user/index_user', {
+            _informationStaff: '',
+            _listStaff: {}
+        });
     } else {
-        res.render('user/index_user', { _informationStaff: '', _listStaff: informationStaff });
+        res.render('user/index_user', {
+            _informationStaff: '',
+            _listStaff: informationStaff.value()
+        });
     }
 });
 
+// tìm kiếm nhân viên theo ten
 app.get('/search', (req, res) => {
     let query = req.query.searchStaff;
-    let arrStaff = informationStaff.filter(staff => staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1);
+    let arrStaff = informationStaff.value().filter(staff => {
+        return staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1
+    });
     res.render('user/index_user', { _listStaff: arrStaff });
 })
 
@@ -36,12 +45,18 @@ app.get('/user/create_user', (req, res) => {
     res.render('user/create_user');
 })
 
+// bấm vô 1 nhân viên để xem thông tin nhân viên đó
 app.get('/user/:userID', (req, res) => {
-    let userID = req.params.userID;
-    let user = informationStaff.find((staff) => staff.id == userID);
-    res.render('user/index_user', { _informationStaff: user, _listStaff: informationStaff });
+    // sử dụng địa chỉ có tên là 'Route parameters'
+    let userID = parseInt(req.params.userID);
+    let user = informationStaff.find({ id: userID }).value();
+    res.render('user/index_user', {
+        _informationStaff: user,
+        _listStaff: informationStaff.value()
+    });
 })
 
+// lưu thông tin nhân viên mới
 app.post('/user/create_user', (req, res) => {
     newStaff = req.body;
     db.get('informationStaff').push(newStaff).write();
