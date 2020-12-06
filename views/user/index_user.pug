@@ -1,45 +1,40 @@
-doctype html
-head
-  meta(charset='UTF-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css')
-  style(type='text/css')
-    include user.css
-  title Quản Lý Nhân Viên
-main.container
-  nav.nav-bar
-    form.search(action='/user/search', method='GET')
-      input#searchStaff.search-staff(type='text', name='searchStaff', placeholder='Search Staff')
-      i.fa.fa-search(aria-hidden='true')
-    .list
-      ul#listStaff.list-staff
-        each staff in _listStaff
-          li
-            span= staff.nameStaff
-            span &nbsp;
-            a(href="/user/" + staff.id) View
-  .content-staff
-    section#infoStaff.info
-      .content-avatar
-        .img-avatar
-        button.btn.btn-choose Choose
-      .content-info
-        .information
-          p Frist Name:
-          input#fristName.input(type='text', name='FristName' value= _informationStaff.nameStaff)
-        .information
-          p Last Name:
-          input#lastName.input(type='text', name='LastName')
-        .information
-          p Age:
-          input#Age.input(type='text', name='Age')
-        .information
-          p Phone Number:
-          input#phoneNumber.input(type='number', name='PhoneNumber')
-        .information
-          p Address:
-          input#address.input(type='text', name='Address')
-        .information
-          p Email:
-          input#email.input(type='email', name='Email') 
-      a#create.btn(href='/user/create_user') Create Staff
+extends ../layouts/common.pug
+
+block content
+  main.container
+    nav.nav-bar
+      form.search(action='/user/search' method='GET')
+        input#searchStaff.search-staff(type='text' name='searchStaff' placeholder='Search Staff')
+        i.fa.fa-search(aria-hidden='true')
+      .list
+        ul#listStaff.list-staff
+          each staff in _listStaff
+            li
+              span= staff.nameStaff
+              span &nbsp;
+              a(href="/user/" + staff.id) View
+    .content-staff
+      section#infoStaff.info
+        .content-avatar
+          .img-avatar
+          button.btn.btn-choose Choose
+        .content-info
+          .information
+            p Frist Name:
+            input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff)
+          .information
+            p Last Name:
+            input#lastName.input(type='text' name='LastName')
+          .information
+            p Age:
+            input#Age.input(type='text' name='Age')
+          .information
+            p Phone Number:
+            input#phoneNumber.input(type='number' name='PhoneNumber')
+          .information
+            p Address:
+            input#address.input(type='text' name='Address')
+          .information
+            p Email:
+            input#email.input(type='email' name='Email') 
+        a#create.btn(href='/user/create_user') Create Staff

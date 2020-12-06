@@ -1,5 +1,8 @@
-h1 Create Staff
-form(action="/user/create_user", method="POST")
-    lable Name
-    input(name="nameStaff", type="text")
-    button Create
+extends ../layouts/common.pug
+
+block content
+    h1 Create Staff
+    form(action="/user/create_user" method="POST")
+        lable Name
+        input(name="nameStaff" type="text")
+        button Create
