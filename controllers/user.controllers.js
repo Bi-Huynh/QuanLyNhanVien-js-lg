@@ -45,5 +45,5 @@ module.exports.postCreateUser = (req, res) => {
     let newStaff = req.body;
     newStaff.id = informationStaff.value().length + 1;
     informationStaff.push(newStaff).write();
-    res.redirect('/');
+    res.redirect('/user');
 }
