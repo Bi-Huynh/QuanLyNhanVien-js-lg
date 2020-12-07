@@ -21,7 +21,7 @@ block content
         .content-info
           .information
             p Frist Name:
-            input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff)
+            input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff ? _informationStaff.nameStaff : '')
           .information
             p Last Name:
             input#lastName.input(type='text' name='LastName')
