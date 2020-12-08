@@ -2,47 +2,58 @@
   "informationStaff": [
     {
       "id": 1,
-      "nameStaff": "sdfsadf"
+      "nameStaff": "sdfsadf",
+      "img": "1.jpg"
     },
     {
       "id": 2,
-      "nameStaff": "asdfasfd"
+      "nameStaff": "asdfasfd",
+      "img": "2.jpg"
     },
     {
       "id": 3,
-      "nameStaff": "kljj"
+      "nameStaff": "kljj",
+      "img": "3.jpg"
     },
     {
       "nameStaff": "cvbcvbc",
-      "id": 4
+      "id": 4,
+      "img": "4.jpg"
     },
     {
       "nameStaff": "dfgdfg",
-      "id": 5
+      "id": 5,
+      "img": "5.jpg"
     },
     {
       "nameStaff": "erwr",
-      "id": 6
+      "id": 6,
+      "img": "6.jpg"
     },
     {
       "nameStaff": "gggg",
-      "id": 7
+      "id": 7,
+      "img": "7.jpg"
     },
     {
       "nameStaff": "rrrr",
-      "id": 8
+      "id": 8,
+      "img": "8.jpg"
     },
     {
       "nameStaff": "eeee",
-      "id": 9
+      "id": 9,
+      "img": "9.jpg"
     },
     {
       "nameStaff": "",
-      "id": 10
+      "id": 10,
+      "img": "10.jpg"
     },
     {
       "nameStaff": "aaaa",
-      "id": 11
+      "id": 11,
+      "img": "11.jpg"
     }
   ]
 }
