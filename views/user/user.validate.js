@@ -6,7 +6,6 @@ module.exports.postCreate = (req, res, next) => {
     }
 
     if (errors.length > 0) {
-        console.log('no');
         res.render('user/create_user', {
             _errors: errors,
             _value: req.body
