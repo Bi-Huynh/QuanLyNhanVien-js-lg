@@ -2,7 +2,12 @@ extends ../layouts/common.pug
 
 block content
     h1 Create Staff
+    if _errors
+        ul
+            each error in _errors
+                li= error
     form(action="/user/create_user" method="POST")
-        lable Name
-        input(name="nameStaff" type="text")
+        lable(for='nameStaff') Name
+        input#nameStaff(name="nameStaff" type="text" value=_value ? _value.nameStaff : "")
+
         button Create
