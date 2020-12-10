@@ -11,6 +11,7 @@ app.set("views", "./views");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('views'));
+// phải có thằng này để nó có thể đọc các file css img ....
 
 app.get('/', (req, res) => {
     res.render('main/index');
