@@ -20,21 +20,21 @@ block content
           button.btn.btn-choose Choose
         .content-info
           .information
-            p Frist Name:
-            input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff ? _informationStaff.nameStaff : '')
+            lable(for='fristName') Frist Name:
+            input#fristName.input(type='text' name='FristName' value= _informationStaff ? _informationStaff.nameStaff : '')
           .information
-            p Last Name:
+            lable(for='lastName') Last Name:
             input#lastName.input(type='text' name='LastName')
           .information
-            p Age:
-            input#Age.input(type='text' name='Age')
+            lable(for='age') Age:
+            input#age.input(type='text' name='Age')
           .information
-            p Phone Number:
+            lable(for='phoneNumber') Phone Number:
             input#phoneNumber.input(type='number' name='PhoneNumber')
           .information
-            p Address:
+            lable(for='address') Address:
             input#address.input(type='text' name='Address')
           .information
-            p Email:
+            lable(for='email') Email:
             input#email.input(type='email' name='Email') 
         a#create.btn(href='/user/create_user') Create Staff
