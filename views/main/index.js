@@ -1,5 +1,7 @@
 const express = require('express');
 const user = require('../user/user');
+const login = require('../login/login');
+
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
@@ -14,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static('views'));
 // phải có thằng này để nó có thể đọc các file css img ....
+app.use('/user', user);
+app.use('/login', login);
 
 app.get('/', (req, res) => {
-    res.render('main/index');
+    res.render('login/index_login');
 });
-
-app.use('/user', user);
 
 app.listen(port, () => {
     console.log(`start ${port}`);
