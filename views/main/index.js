@@ -1,6 +1,7 @@
 const express = require('express');
 const user = require('../user/user');
 const login = require('../login/login');
+const loginController = require('../login/login.controllers');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -16,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static('views'));
 // phải có thằng này để nó có thể đọc các file css img ....
-app.use('/user', user);
+app.use('/user', loginController.requireAuth, user);
+// Nếu chưa login lần nào thì phải cho login r mới được thực hiện các thao tác khác
 app.use('/login', login);
 
 app.get('/', (req, res) => {
