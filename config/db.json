@@ -58,6 +58,17 @@
     {
       "nameStaff": "asdf",
       "id": 12
+    },
+    {
+      "nameStaff": "sdf",
+      "id": 13
+    }
+  ],
+  "accounts": [
+    {
+      "idStaff": 1,
+      "userName": "aaa",
+      "password": "bbb"
     }
   ]
 }

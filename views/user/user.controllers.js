@@ -16,6 +16,11 @@ module.exports.index = (req, res) => {
     }
 }
 
+module.exports.cookie = (req, res) => {
+    res.cookie('id', 1111);
+    res.send('hello cookie');
+}
+
 module.exports.search = (req, res) => {
     let query = req.query.searchStaff;
     let arrStaff = informationStaff.value().filter(staff => {
@@ -28,6 +33,7 @@ module.exports.search = (req, res) => {
 }
 
 module.exports.viewCreate = (req, res) => {
+    console.log(req.cookies);
     res.render('user/create_user');
 }
 
