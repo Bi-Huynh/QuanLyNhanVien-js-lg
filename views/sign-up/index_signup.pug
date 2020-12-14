@@ -1,0 +1,12 @@
+extends ../layouts/common.pug
+
+block content
+    h1 Sign Up
+    form(method="post")
+        lable(for='userName') User Name:
+        input#userName(type="text" name='UserName')
+        lable(for='password') Password:
+        input#password(type="password" name='Password')
+        lable(for='retypePassword') Retype Password:
+        input#retypePassword(type="password" name='RetypePassword')
+        input#submit(type="submit")

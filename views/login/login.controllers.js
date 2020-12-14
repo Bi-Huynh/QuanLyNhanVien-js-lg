@@ -1,4 +1,3 @@
-const { isBuffer } = require('../../config/db');
 const db = require('../../config/db');
 
 const informationStaff = db.get('informationStaff');
