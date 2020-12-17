@@ -16,7 +16,6 @@ module.exports.checkLogin = (req, res, next) => {
     }
 
     let account = accounts.value().find(acc => acc.userName == req.body.UserName && acc.password == req.body.Password);
-
     //nếu chạy hết vòng lặp mà không vô được thì hiển thị lỗi không tồn tại tài khoản
     if (account) {
         req.account = account;

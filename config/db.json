@@ -69,6 +69,11 @@
       "idStaff": 1,
       "userName": "aaa",
       "password": "bbb"
+    },
+    {
+      "idStaff": 2,
+      "userName": "bb",
+      "password": "bb"
     }
   ]
 }

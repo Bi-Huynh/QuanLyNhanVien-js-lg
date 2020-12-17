@@ -11,17 +11,24 @@ module.exports.postLogin = (req, res) => {
     res.render('main/index');
 }
 
-module.exports.requireAuth = (req, res) => {
+module.exports.viewSignUp = (req, res) => {
+    res.render('signUp/index_signup');
+}
+
+module.exports.requireAuth = (req, res, next) => {
+    let errors = [];
+
     if (!req.cookies.userID) {
-        res.redirect('/');
+        res.render('login/index_login');
         // khi chưa đăng nhập thì cho nó quay sang trang login
         return;
     }
 
-    let user = informationStaff.find({ id: req.cookies.userID }).value();
+    let user = informationStaff.find({ id: parseInt(req.cookies.userID) }).value();
 
     if (!user) {
-        res.redirect('/');
+        errors.push('account not found');
+        res.render('login/index_login', { _errors: errors });
         return;
     }
 

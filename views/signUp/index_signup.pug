@@ -2,9 +2,13 @@ extends ../layouts/common.pug
 
 block content
     h1 Sign Up
+    if (_errors)
+        ul
+            each error in _errors
+                li= error 
     form(method="post")
         lable(for='userName') User Name:
-        input#userName(type="text" name='UserName')
+        input#userName(type="text" name='UserName' value=_value ? _value.UserName : '')
         lable(for='password') Password:
         input#password(type="password" name='Password')
         lable(for='retypePassword') Retype Password:
