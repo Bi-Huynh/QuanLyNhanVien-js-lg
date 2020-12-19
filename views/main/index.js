@@ -1,3 +1,7 @@
+require('dotenv').config();
+// để có thể gọi biến trong env: process.env.Tên biến
+// process.env : được dùng để gọi biến môi trường
+
 const express = require('express');
 const user = require('../user/user');
 const login = require('../login/login');
@@ -15,7 +19,7 @@ app.set("views", "./views");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser('asldkdfjhg'));
+app.use(cookieParser());
 // truyền 1 chuỗi ngẫu nhiên vào cookie parser để sử dụng signed cookie
 app.use(express.static('views'));
 // phải có thằng này để nó có thể đọc các file css img ....
