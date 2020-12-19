@@ -1,4 +1,5 @@
 const db = require('../../config/db');
+const md5 = require('md5');
 
 const accounts = db.get('accounts');
 
@@ -15,7 +16,7 @@ module.exports.checkLogin = (req, res, next) => {
         errors.push('Password account is required.');
     }
 
-    let account = accounts.value().find(acc => acc.userName == req.body.UserName && acc.password == req.body.Password);
+    let account = accounts.value().find(acc => acc.userName == req.body.UserName && acc.password == md5(req.body.Password));
     //nếu chạy hết vòng lặp mà không vô được thì hiển thị lỗi không tồn tại tài khoản
     if (account) {
         req.account = account;

@@ -7,9 +7,6 @@ const router = express.Router();
 // trang chủ, thông tin nhân viên
 router.get('/', controllerUser.index);
 
-// tạo trang ảo để học cookie
-router.get('/cookie', controllerUser.cookie);
-
 // tìm kiếm nhân viên theo tên
 router.get('/search', controllerUser.search);
 
