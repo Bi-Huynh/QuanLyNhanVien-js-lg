@@ -1,3 +1,7 @@
+require('dotenv').config();
+// để có thể gọi biến trong env: process.env.Tên biến
+// process.env : được dùng để gọi biến môi trường
+
 const express = require('express');
 const user = require('../user/user');
 const login = require('../login/login');
