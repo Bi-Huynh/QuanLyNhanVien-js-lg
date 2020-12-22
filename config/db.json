@@ -69,6 +69,363 @@
       "idStaff": 1,
       "userName": "aaa",
       "password": "9df62e693988eb4e1e1444ece0578579"
+    },
+    {
+      "idStaff": 2,
+      "userName": "bb",
+      "password": "21ad0bd836b90d08f4cf640b4c298e7c"
+    }
+  ],
+  "products": [
+    {
+      "id": "1ea991a5-e1d0-40e9-b95a-e9988114a8bf",
+      "name": "Bread - Kimel Stick Poly",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "dolor sit amet consectetuer adipiscing elit proin risus praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante",
+      "price": "$9233.74"
+    },
+    {
+      "id": "55452648-826c-4ba1-bd2f-80221bbfd7ac",
+      "name": "Corn - Cream, Canned",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent",
+      "price": "$9950.78"
+    },
+    {
+      "id": "55df34c0-9fc5-4fad-a5ff-9ed57db07c75",
+      "name": "Spring Roll Wrappers",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut ultrices vel augue",
+      "price": "$2815.03"
+    },
+    {
+      "id": "dc06e235-51c8-484b-bc7e-d5bd8b948873",
+      "name": "Bar Energy Chocchip",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero",
+      "price": "$3676.45"
+    },
+    {
+      "id": "c5a4e2a1-504c-4386-933f-99b10920d20d",
+      "name": "Mix - Cocktail Ice Cream",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "in lectus pellentesque at nulla suspendisse potenti cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis",
+      "price": "$8306.81"
+    },
+    {
+      "id": "f6504936-f2bb-41e9-9464-b72c49d8dd0c",
+      "name": "Chocolate Bar - Oh Henry",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate",
+      "price": "$1876.42"
+    },
+    {
+      "id": "2d73bcbf-879d-4379-bdfe-259f5d2727d3",
+      "name": "Juice - V8, Tomato",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "amet consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus id sapien in sapien iaculis congue vivamus metus",
+      "price": "$5169.80"
+    },
+    {
+      "id": "e63387b2-0a7c-49cc-bfb4-502431ab1938",
+      "name": "Gingerale - Diet - Schweppes",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac",
+      "price": "$7306.05"
+    },
+    {
+      "id": "5396cbef-7823-4cec-9c8f-7a85fafcc540",
+      "name": "Flour - Strong Pizza",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas",
+      "price": "$4378.90"
+    },
+    {
+      "id": "f7f96f6c-f517-4336-93f0-5c64bca56f96",
+      "name": "Beef - Tenderlion, Center Cut",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh",
+      "price": "$4822.43"
+    },
+    {
+      "id": "ca3ff584-21a1-40a8-8322-7eb028dfa9c8",
+      "name": "Capicola - Hot",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "id luctus nec molestie sed justo pellentesque viverra pede ac diam cras pellentesque volutpat dui maecenas tristique est et tempus",
+      "price": "$2226.14"
+    },
+    {
+      "id": "f2b7de4f-0556-4635-a94e-27da6c691cc4",
+      "name": "Ice Cream Bar - Drumstick",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium",
+      "price": "$463.98"
+    },
+    {
+      "id": "a3177454-688b-4f22-993d-888e7b230b84",
+      "name": "Ecolab - Ster Bac",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla",
+      "price": "$2401.76"
+    },
+    {
+      "id": "d1c02248-9814-4b33-851a-8574d288dc8e",
+      "name": "Onions - Red",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante",
+      "price": "$9119.97"
+    },
+    {
+      "id": "3220691e-f675-4a69-aaa4-15260089ed01",
+      "name": "Langers - Cranberry Cocktail",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc",
+      "price": "$7320.22"
+    },
+    {
+      "id": "5a54ec35-bb4f-4d3e-a418-7b77c14870ac",
+      "name": "Juice - Apple, 1.36l",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a",
+      "price": "$6229.24"
+    },
+    {
+      "id": "39882ad5-2479-45ef-bb0b-cadbf375c8ba",
+      "name": "Wine - Periguita Fonseca",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit",
+      "price": "$4347.70"
+    },
+    {
+      "id": "66b02ccb-88bb-4160-ab05-ea25848c98b5",
+      "name": "Pepper - Scotch Bonnet",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue",
+      "price": "$6894.23"
+    },
+    {
+      "id": "0c5c70f1-3c8b-471f-9671-90735d1fd58d",
+      "name": "Cups 10oz Trans",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede",
+      "price": "$5687.49"
+    },
+    {
+      "id": "24703194-3c62-423b-b6f2-617b384922be",
+      "name": "Compound - Rum",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis",
+      "price": "$6913.16"
+    },
+    {
+      "id": "46d48930-ef38-44af-9c6b-399302ea3496",
+      "name": "Ham - Procutinni",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "ipsum aliquam non mauris morbi non lectus aliquam sit amet diam in magna bibendum imperdiet nullam orci pede venenatis non",
+      "price": "$8758.91"
+    },
+    {
+      "id": "a12f1531-19b9-4370-b077-1a1d1f7c708c",
+      "name": "Veal - Leg, Provimi - 50 Lb Max",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "est congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum",
+      "price": "$9798.64"
+    },
+    {
+      "id": "14e87681-4819-44ea-a342-b5f88629d754",
+      "name": "Coffee - Frthy Coffee Crisp",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam",
+      "price": "$411.63"
+    },
+    {
+      "id": "b9939032-5478-472f-9797-8e253e4f874d",
+      "name": "Oysters - Smoked",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum",
+      "price": "$1977.21"
+    },
+    {
+      "id": "0aa458ce-c966-4f30-8f5f-cd1e6723336b",
+      "name": "Cheese - Cheddar, Old White",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "sapien cursus vestibulum proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vitae",
+      "price": "$2323.56"
+    },
+    {
+      "id": "22e1854a-50a0-4cbb-bc03-57ec8ca6a86f",
+      "name": "Wine - Saint - Bris 2002, Sauv",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum",
+      "price": "$2104.96"
+    },
+    {
+      "id": "a3e26f1d-f469-45be-b9be-6a04912ffafe",
+      "name": "Milk 2% 500 Ml",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "venenatis lacinia aenean sit amet justo morbi ut odio cras mi pede malesuada in imperdiet et commodo vulputate justo in",
+      "price": "$2142.92"
+    },
+    {
+      "id": "571aede1-0028-419c-91fe-523197507428",
+      "name": "Ham - Smoked, Bone - In",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget nunc donec quis orci eget orci vehicula condimentum curabitur",
+      "price": "$4096.02"
+    },
+    {
+      "id": "0f240fe0-b5bc-4235-8f99-7699ecf14202",
+      "name": "Rabbit - Frozen",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem",
+      "price": "$6711.30"
+    },
+    {
+      "id": "84736620-4a3c-47c0-bf53-0ed88ecb52d2",
+      "name": "Ice Cream - Chocolate",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut",
+      "price": "$5758.54"
+    },
+    {
+      "id": "151ee0a8-d1fb-4c27-8267-1cd3d03f18ec",
+      "name": "Tequila - Sauza Silver",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis",
+      "price": "$3592.37"
+    },
+    {
+      "id": "433438bd-36e9-4f59-b358-b24a51c49ae8",
+      "name": "Bread - French Stick",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum",
+      "price": "$2199.68"
+    },
+    {
+      "id": "e98c0a4e-5d80-49e0-b175-45521646f7cf",
+      "name": "Pork Salted Bellies",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui",
+      "price": "$1578.27"
+    },
+    {
+      "id": "bc2cbd7a-9fc6-4934-af4b-200eb6c037da",
+      "name": "Flour - Bran, Red",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et",
+      "price": "$6082.12"
+    },
+    {
+      "id": "476944ed-2991-4120-a75c-0bbb92cfee69",
+      "name": "Asparagus - Mexican",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula",
+      "price": "$1641.02"
+    },
+    {
+      "id": "3117130f-8c15-4b47-8a63-e359dccc7b70",
+      "name": "Shrimp - Baby, Cold Water",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut",
+      "price": "$1914.83"
+    },
+    {
+      "id": "3d8dc5d2-4ace-4990-af3a-2cabfef300f5",
+      "name": "Seedlings - Buckwheat, Organic",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at",
+      "price": "$9549.96"
+    },
+    {
+      "id": "bbc4a1f7-a644-45ec-b02f-f4ffba8a877f",
+      "name": "Lettuce - Sea / Sea Asparagus",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "ac consequat metus sapien ut nunc vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae mauris",
+      "price": "$8704.71"
+    },
+    {
+      "id": "7fd9b85f-bed7-48d0-82d5-2d61655ea342",
+      "name": "Soup Campbells - Tomato Bisque",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit",
+      "price": "$5717.13"
+    },
+    {
+      "id": "ad4df065-7705-4556-afa3-8f6080a6a22a",
+      "name": "Gingerale - Schweppes, 355 Ml",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est",
+      "price": "$4145.79"
+    },
+    {
+      "id": "396bb6cb-d550-4087-a7a9-cd5d542a602b",
+      "name": "Bread - Multigrain",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh",
+      "price": "$6800.48"
+    },
+    {
+      "id": "8c2f44f1-2b3e-4308-8f74-3cc9cfe44fd6",
+      "name": "Bread - Corn Muffaletta",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "id sapien in sapien iaculis congue vivamus metus arcu adipiscing molestie hendrerit at vulputate vitae nisl aenean lectus pellentesque eget",
+      "price": "$8066.74"
+    },
+    {
+      "id": "f991b517-10d4-4745-ac24-78c6bfc4965d",
+      "name": "Pea - Snow",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in",
+      "price": "$8665.57"
+    },
+    {
+      "id": "c48ee5ae-a726-4b3b-80e1-95de44982c77",
+      "name": "Tomatoes - Cherry",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer",
+      "price": "$4907.46"
+    },
+    {
+      "id": "3c49e91f-e0dc-4452-b316-dc44dcb306ba",
+      "name": "Soup - Campbells Pasta Fagioli",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel",
+      "price": "$9974.82"
+    },
+    {
+      "id": "5f1307ae-3c04-4699-b598-79eb88554801",
+      "name": "Banana Turning",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt",
+      "price": "$8131.43"
+    },
+    {
+      "id": "34ad3362-c4df-4b2d-bfe3-113d9ea9db25",
+      "name": "Alize Sunset",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem sed sagittis nam congue risus semper porta volutpat quam pede",
+      "price": "$6388.37"
+    },
+    {
+      "id": "2c1cfc41-9705-4da2-b809-832195039dbf",
+      "name": "Breakfast Quesadillas",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est",
+      "price": "$9935.26"
+    },
+    {
+      "id": "c95a44c6-d9cb-4df7-9db9-a513b3b3df67",
+      "name": "Oil - Truffle, White",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices mattis odio donec vitae nisi nam",
+      "price": "$5038.79"
+    },
+    {
+      "id": "33588c2b-eb41-437d-a593-1b8314807059",
+      "name": "Appetiser - Bought",
+      "image": "https://loremflickr.com/320/240/dog",
+      "description": "quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac",
+      "price": "$4369.62"
     }
   ]
 }
