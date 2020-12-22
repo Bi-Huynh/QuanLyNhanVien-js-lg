@@ -2,3 +2,14 @@ extends ../layouts/common.pug
 
 block content
     h1 Products List
+    .container
+        if (_listProducts)
+            each product in _listProducts
+                .row
+                    .col-sm
+                        p= product.name
+                        img.rounded.mx-auto.d-block(src= product.image, alt="picture product")
+                        p= product.description
+                        p= product.price
+                        .btn.btn-primary BUY
+
