@@ -70,9 +70,10 @@ html {
     color: var(--color-white);
 }
 
-/* .nav-bar .list {
-
-} */
+.nav-bar .list {
+    overflow: auto;
+    display: flex;
+}
 
 .container .content-staff {
     width: 80%;

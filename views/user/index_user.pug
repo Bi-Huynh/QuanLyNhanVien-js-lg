@@ -7,12 +7,14 @@ block content
         input#searchStaff.search-staff(type='text' name='searchStaff' placeholder='Search Staff')
         i.fa.fa-search(aria-hidden='true')
       .list
-        ul#listStaff.list-staff
+        table#listStaff.table
           each staff in _listStaff
-            li
-              span= staff.nameStaff
-              span &nbsp;
-              a(href="/user/" + staff.id) View
+            tr(data-toggle="modal" data-target="#exampleModalCenter")
+              th
+                img.rounded-circle(src='../img-staff/' + staff.img, width='64' height='64')
+              th= staff.nameStaff
+              th
+                a(href="/user/" + staff.id) View
     .content-staff
       section#infoStaff.info
         .content-avatar
