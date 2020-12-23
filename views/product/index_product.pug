@@ -4,9 +4,9 @@ block content
     h1 Products List
     .container
         if (_listProducts)
-            each product in _listProducts
-                .row
-                    .col-sm
+            .row
+                each product in _listProducts
+                    .col
                         p= product.name
                         img.rounded.mx-auto.d-block(src= product.image, alt="picture product")
                         p= product.description
