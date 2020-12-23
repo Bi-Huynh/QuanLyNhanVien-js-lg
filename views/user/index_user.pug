@@ -17,26 +17,27 @@ block content
                 a(href="/user/" + staff.id) View
     .content-staff
       section#infoStaff.info
-        .content-avatar
-          img.img-avatar(src= _informationStaff ? '../img-staff/' + _informationStaff.img : '')
-          button.btn.btn-choose Choose
-        .content-info
-          .information
-            lable(for='fristName') Frist Name:
-            input#fristName.input(type='text' name='FristName' value= _informationStaff ? _informationStaff.nameStaff : '')
-          .information
-            lable(for='lastName') Last Name:
-            input#lastName.input(type='text' name='LastName')
-          .information
-            lable(for='age') Age:
-            input#age.input(type='text' name='Age')
-          .information
-            lable(for='phoneNumber') Phone Number:
-            input#phoneNumber.input(type='number' name='PhoneNumber')
-          .information
-            lable(for='address') Address:
-            input#address.input(type='text' name='Address')
-          .information
-            lable(for='email') Email:
-            input#email.input(type='email' name='Email') 
+        if(_informationStaff)
+          .content-avatar
+            img.img-avatar(src='../img-staff/' + _informationStaff.img)
+            button.btn.btn-choose Choose
+          .content-info
+            .information
+              lable(for='fristName') Frist Name:
+              input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff)
+            .information
+              lable(for='lastName') Last Name:
+              input#lastName.input(type='text' name='LastName')
+            .information
+              lable(for='age') Age:
+              input#age.input(type='text' name='Age')
+            .information
+              lable(for='phoneNumber') Phone Number:
+              input#phoneNumber.input(type='number' name='PhoneNumber')
+            .information
+              lable(for='address') Address:
+              input#address.input(type='text' name='Address')
+            .information
+              lable(for='email') Email:
+              input#email.input(type='email' name='Email') 
         a#create.btn(href='/user/create_user') Create Staff

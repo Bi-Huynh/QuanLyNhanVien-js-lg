@@ -1,7 +1,10 @@
 const express = require('express');
+var multer = require('multer');
+
 const controllerUser = require('./user.controllers');
 const validateUser = require('./user.validate');
 
+var upload = multer({ dest: 'img-staff/' });
 const router = express.Router();
 
 // trang chủ, thông tin nhân viên
@@ -16,6 +19,6 @@ router.get('/create_user', controllerUser.viewCreate);
 router.get('/:userID', controllerUser.getID);
 
 // lưu thông tin nhân viên mới
-router.post('/create_user', validateUser.postCreate, controllerUser.postCreate);
+router.post('/create_user', upload.single('img'), validateUser.postCreate, controllerUser.postCreate);
 
 module.exports = router;
