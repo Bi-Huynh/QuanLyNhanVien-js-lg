@@ -2,103 +2,117 @@
   "informationStaff": [
     {
       "id": 1,
-      "nameStaff": "sdfsadf",
-      "img": "1.jpg"
+      "nameStaff": "sdfsadf"
     },
     {
       "id": 2,
-      "nameStaff": "asdfasfd",
-      "img": "2.jpg"
+      "nameStaff": "asdfasfd"
     },
     {
       "id": 3,
-      "nameStaff": "kljj",
-      "img": "3.jpg"
+      "nameStaff": "kljj"
     },
     {
       "nameStaff": "cvbcvbc",
-      "id": 4,
-      "img": "4.jpg"
+      "id": 4
     },
     {
       "nameStaff": "dfgdfg",
-      "id": 5,
-      "img": "5.jpg"
+      "id": 5
     },
     {
       "nameStaff": "erwr",
-      "id": 6,
-      "img": "6.jpg"
+      "id": 6
     },
     {
       "nameStaff": "gggg",
-      "id": 7,
-      "img": "7.jpg"
+      "id": 7
     },
     {
       "nameStaff": "rrrr",
-      "id": 8,
-      "img": "8.jpg"
+      "id": 8
     },
     {
       "nameStaff": "eeee",
-      "id": 9,
-      "img": "9.jpg"
+      "id": 9
     },
     {
       "nameStaff": "",
-      "id": 10,
-      "img": "10.jpg"
+      "id": 10
     },
     {
       "nameStaff": "aaaa",
-      "id": 11,
-      "img": "11.jpg"
+      "id": 11
     },
     {
       "nameStaff": "asdf",
-      "id": 12,
-      "img": "11.jpg"
+      "id": 12
     },
     {
       "nameStaff": "sdf",
-      "id": 13,
-      "img": "11.jpg"
+      "id": 13
     },
     {
       "nameStaff": "tom",
-      "img": "8b2a500e7e6314ee44e5f88fe328de8f.jpg",
       "id": 14
     },
     {
       "nameStaff": "cat",
-      "id": 15,
-      "img": "d10ac9d73f20b7b60f5cf2449b991b6c"
+      "id": 15
     },
     {
       "nameStaff": "chuot",
-      "id": 16,
-      "img": "56c3c6261991296e78a88b1dceab7cb3"
+      "id": 16
     },
     {
       "nameStaff": "chuot",
-      "id": 17,
-      "img": "f8762ccf9733ccf18703636d95393d01"
+      "id": 17
     },
     {
       "nameStaff": "asdf",
-      "id": 18,
-      "img": "b9baf087b097ee889221a788b19839ba"
+      "id": 18
     },
     {
       "nameStaff": "asdf",
-      "id": 19,
-      "img": "56307943ba4e60fb42d7e3ce2b53dd40"
+      "id": 19
     },
     {
       "nameStaff": "cat",
-      "id": 20,
-      "img": "8f82017365b33aa14bb401bacd2d0"
+      "id": 20
+    },
+    {
+      "nameStaff": "xvcvxcv",
+      "id": 21
+    },
+    {
+      "nameStaff": "asdf",
+      "id": 22
+    },
+    {
+      "nameStaff": "asdf",
+      "id": 23
+    },
+    {
+      "nameStaff": "asdf",
+      "id": 24
+    },
+    {
+      "nameStaff": "erwr",
+      "id": 25
+    },
+    {
+      "nameStaff": "asdf",
+      "id": 26
+    },
+    {
+      "nameStaff": "asdf",
+      "id": 27,
+      "img": "../img-staff/86a32f4591ea1091de66e66696df05c2"
+    },
+    {
+      "nameStaff": "cat",
+      "id": 28,
+      "img": "../img-staff/8386895cf9dde176b9cda33bd1b2d8a8"
     }
   ],
   "accounts": [

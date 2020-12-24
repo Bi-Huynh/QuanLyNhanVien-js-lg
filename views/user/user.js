@@ -4,7 +4,7 @@ var multer = require('multer');
 const controllerUser = require('./user.controllers');
 const validateUser = require('./user.validate');
 
-var upload = multer({ dest: './avatar/' });
+var upload = multer({ dest: './views/img-staff/' });
 const router = express.Router();
 
 // trang chủ, thông tin nhân viên

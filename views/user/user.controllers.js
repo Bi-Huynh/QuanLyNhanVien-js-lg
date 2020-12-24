@@ -44,7 +44,9 @@ module.exports.getID = (req, res) => {
 module.exports.postCreate = (req, res) => {
     let newStaff = req.body;
     newStaff.id = informationStaff.value().length + 1;
-    newStaff.img = req.file.path.slice(10);
+    let img = req.file.path.split('\\').slice(1);
+    img.unshift('..');
+    newStaff.img = img.join('/');
     informationStaff.push(newStaff).write();
     res.redirect('/user');
 }
