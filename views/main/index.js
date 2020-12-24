@@ -3,11 +3,11 @@ require('dotenv').config();
 // process.env : được dùng để gọi biến môi trường
 
 const express = require('express');
-const user = require('../user/user');
-const login = require('../login/login');
+const user = require('../user/user.router');
+const login = require('../login/login.router');
 const loginController = require('../login/login.controllers');
-const signup = require('../signUp/signup');
-const product = require('../product/product');
+const signup = require('../signUp/signup.router');
+const product = require('../product/product.router');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
