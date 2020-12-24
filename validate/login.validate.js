@@ -1,4 +1,4 @@
-const db = require('../../config/db');
+const db = require('../config/db');
 const md5 = require('md5');
 
 const accounts = db.get('accounts');

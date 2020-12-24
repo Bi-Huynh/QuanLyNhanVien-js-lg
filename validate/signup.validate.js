@@ -1,5 +1,5 @@
-const { isBuffer } = require('../../config/db');
-const db = require('../../config/db');
+const { isBuffer } = require('../config/db');
+const db = require('../config/db');
 
 const accounts = db.get('accounts');
 
