@@ -12,7 +12,7 @@ block content
             each staff in _listStaff
               tr(data-toggle="modal" data-target="#exampleModalCenter")
                 th
-                  img.rounded-circle(src=staff.img, width='64' height='64')
+                  img.rounded-circle(src= '/' + staff.img, width='64' height='64')
                 th= staff.nameStaff
                 th
                   a(href="/user/" + staff.id) View
@@ -20,7 +20,7 @@ block content
       section#infoStaff.info
         if(_informationStaff)
         .content-avatar
-          img.img-avatar(src=_informationStaff.img)
+          img.img-avatar(src= '/' + _informationStaff.img)
           button.btn.btn-choose Choose
         .content-info
           .information
