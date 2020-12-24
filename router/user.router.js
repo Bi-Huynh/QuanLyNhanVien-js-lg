@@ -1,10 +1,10 @@
 const express = require('express');
 var multer = require('multer');
 
-const controllerUser = require('./user.controllers');
-const validateUser = require('./user.validate');
+const controllerUser = require('../controller/user.controllers');
+const validateUser = require('../validate/user.validate');
 
-var upload = multer({ dest: './views/img-staff/' });
+var upload = multer({ dest: './public/img-staff/' });
 const router = express.Router();
 
 // trang chủ, thông tin nhân viên

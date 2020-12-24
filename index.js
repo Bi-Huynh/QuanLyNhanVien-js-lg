@@ -3,11 +3,11 @@ require('dotenv').config();
 // process.env : được dùng để gọi biến môi trường
 
 const express = require('express');
-const user = require('../user/user');
-const login = require('../login/login');
-const loginController = require('../login/login.controllers');
-const signup = require('../signUp/signup');
-const product = require('../product/product');
+const user = require('./router/user.router');
+const login = require('./router/login.router');
+const authMiddleware = require('./middleware/auth.login.middleware');
+const signup = require('./router/signup.router');
+const product = require('./router/product.router');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -22,13 +22,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SESSION_SECRET));
 // truyền 1 chuỗi ngẫu nhiên vào cookie parser để sử dụng signed cookie
-app.use(express.static('views'));
+app.use(express.static('public'));
 // phải có thằng này để nó có thể đọc các file css img ....
-app.use('/user', loginController.requireAuth, user);
+app.use('/user', authMiddleware.requireAuth, user);
 // Nếu chưa login lần nào thì phải cho login r mới được thực hiện các thao tác khác
 app.use('/login', login);
 app.use('/signUp', signup);
-app.use('/product', product);
+app.use('/product', authMiddleware.requireAuth, product);
 
 app.get('/', (req, res) => {
     res.render('login/index_login');

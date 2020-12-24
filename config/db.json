@@ -107,12 +107,12 @@
     {
       "nameStaff": "asdf",
       "id": 27,
-      "img": "../img-staff/86a32f4591ea1091de66e66696df05c2"
+      "img": "img-staff/86a32f4591ea1091de66e66696df05c2"
     },
     {
       "nameStaff": "cat",
       "id": 28,
-      "img": "../img-staff/8386895cf9dde176b9cda33bd1b2d8a8"
+      "img": "img-staff/1.jpg"
     }
   ],
   "accounts": [
