@@ -478,5 +478,14 @@
       "description": "quis tortor id nulla ultrices aliquet maecenas leo odio condimentum id luctus nec molestie sed justo pellentesque viverra pede ac",
       "price": "$4369.62"
     }
+  ],
+  "session": [
+    {
+      "id": "JGTW5MYau",
+      "cart": {
+        "1ea991a5-e1d0-40e9-b95a-e9988114a8bf": 4,
+        "55452648-826c-4ba1-bd2f-80221bbfd7ac": 1
+      }
+    }
   ]
 }
