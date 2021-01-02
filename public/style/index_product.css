@@ -1,0 +1,57 @@
+.container {
+    padding: 5rem 10rem;
+}
+
+.list-card-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Tại sao dòng này lại không chạy */
+    align-items: space-around;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    /* height: 50rem; */
+    margin-right: 2rem;
+    background-color: #000;
+}
+
+.card .card-img {
+    width: 25rem;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.card .card-body {
+    height: 20rem;
+    width: 100%;
+    background-color: #f00;
+    padding: .5rem 1rem;
+}
+
+.card-body .card-text {
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+    margin-top: 1rem;
+}
+
+.card .card-footer {
+    height: 4rem;
+    background-color: #ff0;
+}
+
+.btn {
+    padding: 1rem;
+    border-radius: 50px;
+    
+}
+
+a {
+    align-items: flex-end;
+}
