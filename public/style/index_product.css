@@ -1,57 +1,116 @@
+
+
 .container {
-    padding: 5rem 10rem;
+    font-size: 16px;
+    font-family: Roboto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0rem;
 }
 
 .list-card-product {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    /* Tại sao dòng này lại không chạy */
-    align-items: space-around;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 6rem;
 }
 
-.card {
+.list-card-product .card {
     display: flex;
     flex-direction: column;
-    width: 25rem;
-    /* height: 50rem; */
-    margin-right: 2rem;
-    background-color: #000;
+    width: 300px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: linear 0.2s;
+}
+
+.card:hover {
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .card .card-img {
-    width: 25rem;
+    height: 450px;
+    position: relative;
+    transition: linear 0.2s;
+}
+
+.card-img img {
     width: 100%;
     height: auto;
-    object-fit: contain;
-    image-rendering: pixelated;
+    object-fit: cover;
+}
+
+.card-img .overlay {
+    background-color: rgba(177, 36, 36, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    visibility: hidden;
+}
+
+.card-img:hover .overlay {
+    visibility: visible;
+    animation: fade 0.2s;
+}
+
+.overlay .btn {
+    text-decoration: none;
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(227, 227, 227, 0.8);
+    color: rgb(222, 7, 7);
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgb(188, 188, 188, 0.2);
+    border: none;
+}
+
+.overlay .btn:hover {
+    box-shadow: 1px 2px 6px rgb(188, 188, 188, 0.8);
+    background-color: #fff;
+    transition: ease-out 0.2s;
 }
 
 .card .card-body {
-    height: 20rem;
-    width: 100%;
-    background-color: #f00;
-    padding: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0rem;
 }
 
-.card-body .card-text {
-    /* text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden; */
-    margin-top: 1rem;
+.card-body .card-detail {
+    flex-grow: 2;
+    padding-left: 2px;
+    font-weight: bold;
+    letter-spacing: .5px;
 }
 
-.card .card-footer {
-    height: 4rem;
-    background-color: #ff0;
+.card-body .card-price {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    color: rgb(222, 7, 7);
 }
 
-.btn {
-    padding: 1rem;
-    border-radius: 50px;
-    
-}
-
-a {
-    align-items: flex-end;
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

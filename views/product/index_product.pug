@@ -1,31 +1,33 @@
 extends ../layouts/common.pug
 
 block content
-    h1 Products List
     .container
         if (_listProducts)
             .list-card-product
                 each product in _listProducts
                     .card
-                        img.card-img(src= product.image, alt="picture product")
+                        .card-img
+                            img(src= product.image, alt="picture product")
+                            .overlay
+                                a.btn(href="#") SEEN INFO
+                                a.btn(href=`/cart/add/${product.id}`) BUY NOW
                         .card-body
-                            h2.card-title= product.name
-                            p.card-text= product.description
-                            p.card-text= product.price
-                        .card-footer
-                            a.btn(href="#") SEEN
-                            a.btn(href=`/cart/add/${product.id}`) BUY
-            nav(aria-label='Page navigation product')
-                ul.pagination
+                            .card-detail
+                                P= product.name
+                            .card-price
+                                p= product.price
+
+        nav(aria-label='Page navigation product')
+        ul.pagination
+            li.page-item
+                a.page-link(href= _page ? `${_page - 1}` : `1` aria-label='Previous')
+                    span(aria-hidden='true') &laquo;
+                    span.sr-only Previous
+            if (_length)
+                -for (var i = 0; i < _length; i++)
                     li.page-item
-                        a.page-link(href= _page ? `${_page - 1}` : `1` aria-label='Previous')
-                            span(aria-hidden='true') &laquo;
-                            span.sr-only Previous
-                    if (_length)
-                        -for (var i = 0; i < _length; i++)
-                            li.page-item
-                            a.page-link(href=`${i + 1}`) #{i + 1}
-                    li.page-item
-                        a.page-link(href= _page ? `${_page + 1}` : `${_listProducts.length - 1}` aria-label='Next')
-                            span(aria-hidden='true') &raquo;
-                            span.sr-only Next
+                    a.page-link(href=`${i + 1}`) #{i + 1}
+            li.page-item
+                a.page-link(href= _page ? `${_page + 1}` : `${_listProducts.length - 1}` aria-label='Next')
+                    span(aria-hidden='true') &raquo;
+                    span.sr-only Next
