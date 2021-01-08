@@ -11,6 +11,7 @@ module.exports = (req, res, next) => {
         session.save(err => {
             if (err) {
                 console.log(err);
+                throw err;
             }
         });
 

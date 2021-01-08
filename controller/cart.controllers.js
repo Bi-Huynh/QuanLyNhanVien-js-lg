@@ -31,10 +31,11 @@ module.exports.addToCart = (req, res) => {
 
         session.save(err => {
             if (err) {
+                console.log(err);
                 throw err;
             }
         });
-    });
+    }).exec();
 
     res.redirect('/product');
 }

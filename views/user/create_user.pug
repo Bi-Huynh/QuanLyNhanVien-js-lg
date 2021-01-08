@@ -8,8 +8,8 @@ block content
                 li= error
     form(action="/user/create_user" method="POST" enctype="multipart/form-data")
         .form-group
-            lable(for="nameStaff") Name
-            input#nameStaff(name="nameStaff" type="text" value=_value ? _value.nameStaff : "" placeholder="Enter your name")
+            lable(for="name") Name
+            input#name(name="name" type="text" value=_value ? _value.name : "" placeholder="Enter your name")
         .form-group
             lable(for="img") Avatar
             input#img.form-control-file(name="img" type="file")

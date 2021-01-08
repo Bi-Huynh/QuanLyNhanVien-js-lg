@@ -1,7 +1,7 @@
 module.exports.postCreate = (req, res, next) => {
     let errors = [];
 
-    if (!req.body.nameStaff) {
+    if (!req.body.name) {
         errors.push('Name staff is required.');
     }
 
