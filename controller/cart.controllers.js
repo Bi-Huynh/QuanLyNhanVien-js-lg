@@ -12,45 +12,29 @@ module.exports.addToCart = (req, res) => {
     }
 
     Session.findById(sessionID, (err, session) => {
+        // tìm sessionID trong session để xem có session được gửi lên hay không
         if (err) {
             // nếu không tìm thấy session thì báo lỗi.
-            throw err;
+            console.log(`Không tìm thấy sessionID, err: ${err}`);
         }
 
-        let product = session.cart.find(i => i.productID == productID);
+        let product = session.cart.find(i => i._id == productID);
 
         if (!product) {
             session.cart = {
-                productID: productID,
-                amount: 0
+                _id: productID,
+                amount: 1
             }
-
-            session.save(err => {
-                if (err) {
-                    throw err;
-                }
-            });
         } else {
             product.amount += 1;
-
-            session.save(err => {
-                if (err) {
-                    throw err;
-                }
-            });
         }
+
+        session.save(err => {
+            if (err) {
+                throw err;
+            }
+        });
     });
-
-    // let amount = db
-    //     .get('session')
-    //     .find({ id: sessionID })
-    //     .get('cart.' + productID, 0)
-    //     .value();
-
-    // db.get('session')
-    //     .find({ id: sessionID })
-    //     .set('cart.' + productID, amount + 1)
-    //     .write();
 
     res.redirect('/product');
 }
