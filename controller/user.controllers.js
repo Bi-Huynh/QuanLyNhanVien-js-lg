@@ -22,16 +22,12 @@ module.exports.search = async (req, res) => {
     // let arrStaff = staffs.filter(staff => {
     //     return staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1
     // });
-    let arrStaff = await Staff.find({ name: { last: 'd' } }).exec();
-    // chưa fix được
+    let arrStaff = await Staff.find({ 'name.last': query }).exec();
+    // chưa fix được tìm kiếm không phân biệt hoa thường
     // `/.../i` không phân biệt hoa thường
-    if (arrStaff) {
-        res.render('user/index_user', {
-            _listStaff: arrStaff
-        });
-    } else {
-        console.log('khong lay duoc danh sach');
-    }
+    res.render('user/index_user', {
+        _listStaff: arrStaff
+    });
 }
 
 module.exports.viewCreate = (req, res) => {
