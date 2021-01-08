@@ -5,9 +5,13 @@ const staffSchema = new mongoose.Schema({
     name: {
         first: {
             type: String,
-            default: 'No Name'
+            default: 'No Name',
+            trim: true
         },
-        last: String
+        last: {
+            type: String,
+            trim: true
+        }
     },
     img: String
 })

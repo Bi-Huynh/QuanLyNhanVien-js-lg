@@ -19,15 +19,24 @@ module.exports.index = async (req, res) => {
 
 module.exports.search = async (req, res) => {
     let query = req.query.searchStaff;
-    // let arrStaff = staffs.filter(staff => {
-    //     return staff.nameStaff.toLowerCase().indexOf(query.toLowerCase()) !== -1
+
+    // cách viết 1
+    // let arrStaff = await Staff.find({ 'name.first': { $regex: query, $options: 'i' } }).exec();
+    // // `/.../i` không phân biệt hoa thường
+
+    // res.render('user/index_user', {
+    //     _listStaff: arrStaff
     // });
-    let arrStaff = await Staff.find({ 'name.last': query }).exec();
-    // chưa fix được tìm kiếm không phân biệt hoa thường
-    // `/.../i` không phân biệt hoa thường
-    res.render('user/index_user', {
-        _listStaff: arrStaff
-    });
+
+    // cách viết 2
+    await Staff.find({ 'name.first': { $regex: query, $options: 'i' } })
+        .sort({ 'name.first': -1 })
+        .exec((err, staffs) => {
+            if (err) throw err;
+            res.render('user/index_user', {
+                _listStaff: staffs
+            });
+        });
 }
 
 module.exports.viewCreate = (req, res) => {
