@@ -8,8 +8,9 @@ module.exports.index = async (req, res) => {
     // let perPage = 8;
     // let start = (page - 1) * perPage;
     // let end = page * perPage;
-    // let array = products.value().slice(start, end);
-    // let length = parseInt(products.value().length / perPage);
+    // let array = products.slice(start, end);
+
+    // let length = parseInt(products.count() / perPage);
     // res.render('product/index_product', {
     //     _listProducts: array,
     //     _page: page,

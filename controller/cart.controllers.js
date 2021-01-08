@@ -1,4 +1,5 @@
 const db = require('../config/db');
+const Session = require('../model/session.model');
 
 module.exports.addToCart = (req, res) => {
     let productID = req.params.productID;
@@ -10,16 +11,46 @@ module.exports.addToCart = (req, res) => {
         return;
     }
 
-    let amount = db
-        .get('session')
-        .find({ id: sessionID })
-        .get('cart.' + productID, 0)
-        .value();
+    Session.findById(sessionID, (err, session) => {
+        if (err) {
+            // nếu không tìm thấy session thì báo lỗi.
+            throw err;
+        }
 
-    db.get('session')
-        .find({ id: sessionID })
-        .set('cart.' + productID, amount + 1)
-        .write();
+        let product = session.cart.find(i => i.productID == productID);
+
+        if (!product) {
+            session.cart = {
+                productID: productID,
+                amount: 0
+            }
+
+            session.save(err => {
+                if (err) {
+                    throw err;
+                }
+            });
+        } else {
+            product.amount += 1;
+
+            session.save(err => {
+                if (err) {
+                    throw err;
+                }
+            });
+        }
+    });
+
+    // let amount = db
+    //     .get('session')
+    //     .find({ id: sessionID })
+    //     .get('cart.' + productID, 0)
+    //     .value();
+
+    // db.get('session')
+    //     .find({ id: sessionID })
+    //     .set('cart.' + productID, amount + 1)
+    //     .write();
 
     res.redirect('/product');
 }

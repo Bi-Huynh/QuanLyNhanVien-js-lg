@@ -17,17 +17,35 @@ block content
                             .card-price
                                 p= product.price
 
-        nav(aria-label='Page navigation product')
-        ul.pagination
-            li.page-item
-                a.page-link(href= _page ? `${_page - 1}` : `1` aria-label='Previous')
-                    span(aria-hidden='true') &laquo;
-                    span.sr-only Previous
-            if (_length)
-                -for (var i = 0; i < _length; i++)
+            nav(aria-label='Page navigation product')
+                ul.pagination
                     li.page-item
-                    a.page-link(href=`${i + 1}`) #{i + 1}
-            li.page-item
-                a.page-link(href= _page ? `${_page + 1}` : `${_listProducts.length - 1}` aria-label='Next')
-                    span(aria-hidden='true') &raquo;
-                    span.sr-only Next
+                        a.page-link(href= _page ? `${_page - 1}` : `1` aria-label='Previous')
+                            span(aria-hidden='true') &laquo;
+                            span.sr-only Previous
+                    if (_length)
+                        -for (var i = 0; i < _length; i++)
+                            li.page-item
+                            a.page-link(href=`${i + 1}`) #{i + 1}
+                    li.page-item
+                        a.page-link(href= _page ? `${_page + 1}` : `${_listProducts.length - 1}` aria-label='Next')
+                            span(aria-hidden='true') &raquo;
+                            span.sr-only Next
+            .content_detail__pagination.cdp
+
+            //- #pag-cover
+            //-     #pg-links
+            //-         .td.arr-cover
+            //-             #l-arrow.arrow
+            //-                 i.fas.fa-chevron-circle-left
+            //-         .td
+            //-             #links
+            //-                 a#m-pg-link.pg-link(href="#")
+            //-                     span 1
+            //-                 a.pg-link(href="#")
+            //-                     span 2
+            //-                 a.pg-link(href="#")
+            //-                     span 3
+            //-         .td.arr-cover
+            //-             #r-arrow.arrow
+            //-                 i.fas.fa-chevron-circle-right

@@ -18,7 +18,10 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 
+// kết nối tới mongoose
 mongoose.connect(process.env.MONGO_URL);
+// ép mongoose sử dụng thư viện promise toàn cục
+// mongoos.Promise = global.Promise;
 
 app.set('view engine', 'pug');
 app.set("views", "./views");
