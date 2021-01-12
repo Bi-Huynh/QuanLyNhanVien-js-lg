@@ -5,11 +5,12 @@ const staffSchema = new mongoose.Schema({
     name: {
         first: {
             type: String,
-            default: 'No Name',
+            default: 'No',
             trim: true
         },
         last: {
             type: String,
+            default: 'Name',
             trim: true
         }
     },

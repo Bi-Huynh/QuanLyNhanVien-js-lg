@@ -17,10 +17,17 @@ module.exports.index = async (req, res) => {
     //     _length: length + 1
     // });
 
-    let products = await Product.find();
-    res.render('product/index_product', {
-        _listProducts: products
-    })
+    await Product.find({}).exec((err, products) => {
+        if (err) {
+            console.log(err);
+            res.render('product/index_product');
+        }
+
+        res.render('product/index_product', {
+            _listProducts: products
+        });
+    });
+
     // bình thường thì phải dùng then (callback) để gọi render nhưng khi sử
     // dụng async thì không cần phải sử dụng callback => chương trình sẽ nhẹ hơn
 }

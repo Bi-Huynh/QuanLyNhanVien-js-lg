@@ -8,11 +8,29 @@ const accountSchema = new mongoose.Schema({
     },
     userName: {
         type: String,
-        require: true
+        require: true,
+        trim: true,
+        validate: [
+            {
+                validator: (text) => {
+                    return text.length !== 10;
+                },
+                msg: 'information user name must be 10 characters'
+            }
+        ]
     },
     password: {
         type: String,
-        require: true
+        require: true,
+        trim: true,
+        validate: [
+            {
+                validator: (text) => {
+                    return text.length >= 10;
+                },
+                msg: 'information password greater than 10 characters'
+            }
+        ]
     }
 });
 
