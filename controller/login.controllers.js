@@ -3,7 +3,8 @@ module.exports.index = (req, res) => {
 }
 
 module.exports.postLogin = (req, res) => {
-    res.cookie('userID', req.account.idStaff, {
+    let id = req.staff;
+    res.cookie('userID', req.staff, {
         signed: true
     });
     // thêm signed để signed cookie có thể hoạt động.

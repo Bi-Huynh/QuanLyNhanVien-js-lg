@@ -1,15 +1,23 @@
-const db = require('../config/db');
-const id = require('shortid');
+const mongoose = require('mongoose');
+const Session = require('../model/session.model');
 
 module.exports = (req, res, next) => {
-    let sessionID = id.generate();
 
     if (!req.signedCookies.sessionID) {
-        res.cookie('sessionID', sessionID, {
-            signed: true
+        let session = new Session({
+            _id: new mongoose.Types.ObjectId()
         });
 
-        db.get('session').push({ id: sessionID }).write();
+        session.save(err => {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+        });
+
+        res.cookie('sessionID', session._id, {
+            signed: true
+        });
     }
 
     next();

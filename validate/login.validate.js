@@ -1,9 +1,10 @@
-const db = require('../config/db');
+// const db = require('../config/db');
+const Account = require('../model/account.model');
 const md5 = require('md5');
 
-const accounts = db.get('accounts');
+// const accounts = db.get('accounts');
 
-module.exports.checkLogin = (req, res, next) => {
+module.exports.checkLogin = async (req, res, next) => {
     let errors = [];
 
     if (!req.body.UserName) {
@@ -16,21 +17,32 @@ module.exports.checkLogin = (req, res, next) => {
         errors.push('Password account is required.');
     }
 
-    let account = accounts.value().find(acc => acc.userName == req.body.UserName && acc.password == md5(req.body.Password));
-    //nếu chạy hết vòng lặp mà không vô được thì hiển thị lỗi không tồn tại tài khoản
-    if (account) {
-        req.account = account;
-        // việc gán như này để cho sau khi next trong req có lưu biến account để có thể sử dụng
-        next();
-    } else {
-        errors.push('account does not exist.');
-    }
+    // let account = accounts.value().find(acc => acc.userName == req.body.UserName && acc.password == md5(req.body.Password));
+    await Account.find({
+        userName: { $eq: req.body.UserName },
+        password: { $eq: md5(req.body.Password) }
+    }).exec((err, account) => {
+        if (err) {
+            console.error("err: " + err);
+            return;
+        }
 
-    if (errors.length > 0) {
-        res.render('login/index_login', {
-            _errors: errors,
-            _value: req.body
-        });
-        return;
-    }
+        if (account) {
+            req.staff = account[0].idStaff;
+            // việc gán như này để cho sau khi next trong req có lưu biến account để có thể sử dụng
+            next();
+        } else {
+            errors.push('account does not exist.');
+        }
+
+        if (errors.length > 0) {
+            res.render('login/index_login', {
+                _errors: errors,
+                _value: req.body
+            });
+            return;
+        }
+    })
+    //nếu chạy hết vòng lặp mà không vô được thì hiển thị lỗi không tồn tại tài khoản
+
 }

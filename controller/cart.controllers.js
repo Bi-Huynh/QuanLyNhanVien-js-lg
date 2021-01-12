@@ -1,6 +1,7 @@
-const db = require('../config/db');
+// const db = require('../config/db');
+const Session = require('../model/session.model');
 
-module.exports.addToCart = (req, res) => {
+module.exports.addToCart = async (req, res) => {
     let productID = req.params.productID;
     let sessionID = req.signedCookies.sessionID;
 
@@ -10,16 +11,32 @@ module.exports.addToCart = (req, res) => {
         return;
     }
 
-    let amount = db
-        .get('session')
-        .find({ id: sessionID })
-        .get('cart.' + productID, 0)
-        .value();
+    await Session.findById(sessionID).exec((err, session) => {
+        // tìm sessionID trong session để xem có session được gửi lên hay không
+        if (err) {
+            // nếu không tìm thấy session thì báo lỗi.
+            console.log(`Không tìm thấy sessionID, err: ${err}`);
+            return;
+        }
 
-    db.get('session')
-        .find({ id: sessionID })
-        .set('cart.' + productID, amount + 1)
-        .write();
+        let product = session.cart.find(i => i._id == productID);
+
+        if (!product) {
+            session.cart = {
+                _id: productID,
+                amount: 1
+            }
+        } else {
+            product.amount += 1;
+        }
+
+        session.save(err => {
+            if (err) {
+                console.log(err);
+                throw err;
+            }
+        });
+    });
 
     res.redirect('/product');
 }

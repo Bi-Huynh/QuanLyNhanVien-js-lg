@@ -1,20 +1,22 @@
 extends ../layouts/common.pug
 
 block content
-    h1 Products List
     .container
         if (_listProducts)
-            .row
+            .list-card-product
                 each product in _listProducts
-                    .col.mb-3
-                        .media
-                            img.rounded.mx-auto(src= product.image, alt="picture product")
-                            .media-body.ml-3
-                                h2.mt-0= product.name
-                                p= product.description
+                    .card
+                        .card-img
+                            img(src= product.image, alt="picture product")
+                            .overlay
+                                a.btn(href="#") SEEN INFO
+                                a.btn(href=`/cart/add/${product.id}`) BUY NOW
+                        .card-body
+                            .card-detail
+                                P= product.name
+                            .card-price
                                 p= product.price
-                                a.btn.btn-primary.btn-lg(href="#" data-toggle="button" aria-pressed="false" autocomplete="off") SEEN
-                                a.btn.btn-primary.btn-lg.ml-3(href=`/cart/add/${product.id}`  data-toggle="button" aria-pressed="false" autocomplete="off") BUY
+
             nav(aria-label='Page navigation product')
                 ul.pagination
                     li.page-item
@@ -29,3 +31,21 @@ block content
                         a.page-link(href= _page ? `${_page + 1}` : `${_listProducts.length - 1}` aria-label='Next')
                             span(aria-hidden='true') &raquo;
                             span.sr-only Next
+            .content_detail__pagination.cdp
+
+            //- #pag-cover
+            //-     #pg-links
+            //-         .td.arr-cover
+            //-             #l-arrow.arrow
+            //-                 i.fas.fa-chevron-circle-left
+            //-         .td
+            //-             #links
+            //-                 a#m-pg-link.pg-link(href="#")
+            //-                     span 1
+            //-                 a.pg-link(href="#")
+            //-                     span 2
+            //-                 a.pg-link(href="#")
+            //-                     span 3
+            //-         .td.arr-cover
+            //-             #r-arrow.arrow
+            //-                 i.fas.fa-chevron-circle-right

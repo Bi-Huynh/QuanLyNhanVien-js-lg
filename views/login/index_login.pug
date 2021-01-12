@@ -9,9 +9,9 @@ block content
 
     form(action='/login/' method='POST')
         lable(for='userName') User Name:
-        input#userName.user-name(type='text' name='UserName' value=_value ? _value.UserName : '')
+        input#userName(type='text' name='UserName' value=_value ? _value.UserName : '')
         lable(for='password') Password:
-        input#password.passwd(type='password' name='Password')
+        input#password(type='password' name='Password')
         input#submit(type='submit')
 
     a(href='/signUp') Sign up

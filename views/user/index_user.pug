@@ -1,6 +1,7 @@
 extends ../layouts/common.pug
 
 block content
+  h1 user
   main.container
     nav.nav-bar
       form.search(action='/user/search' method='GET')
@@ -12,34 +13,34 @@ block content
             each staff in _listStaff
               tr(data-toggle="modal" data-target="#exampleModalCenter")
                 th
-                  img.rounded-circle(src= '/' + staff.img, width='64' height='64')
-                th= staff.nameStaff
+                  img.rounded-circle(src= staff.img ? '/img-staff/' + staff.img : '' width='64' height='64')
+                th= staff.name.first + ' ' + staff.name.last
                 th
                   a(href="/user/" + staff.id) View
     .content-staff
       section#infoStaff.info
         if(_informationStaff)
-        .content-avatar
-          img.img-avatar(src= '/' + _informationStaff.img)
-          button.btn.btn-choose Choose
-        .content-info
-          .information
-          lable(for='fristName') Frist Name:
-          input#fristName.input(type='text' name='FristName' value= _informationStaff.nameStaff)
-          .information
-          lable(for='lastName') Last Name:
-          input#lastName.input(type='text' name='LastName')
-          .information
-          lable(for='age') Age:
-          input#age.input(type='text' name='Age')
-          .information
-          lable(for='phoneNumber') Phone Number:
-          input#phoneNumber.input(type='number' name='PhoneNumber')
-          .information
-          lable(for='address') Address:
-          input#address.input(type='text' name='Address')
-          .information
-          lable(for='email') Email:
-          input#email.input(type='email' name='Email') 
-        a#create.btn(href='/user/create_user') Create Staff
+          .content-avatar
+            img.img-avatar(src= _informationStaff.img ? '/img-staff/' + _informationStaff.img : '')
+            button.btn.btn-choose Choose
+          .content-info
+            .information
+            lable(for='fristName') Frist Name:
+            input#fristName.input(type='text' name='FristName' value= _informationStaff.name.first)
+            .information
+            lable(for='lastName') Last Name:
+            input#lastName.input(type='text' name='LastName' value= _informationStaff.name.last)
+            .information
+            lable(for='age') Age:
+            input#age.input(type='text' name='Age')
+            .information
+            lable(for='phoneNumber') Phone Number:
+            input#phoneNumber.input(type='number' name='PhoneNumber')
+            .information
+            lable(for='address') Address:
+            input#address.input(type='text' name='Address')
+            .information
+            lable(for='email') Email:
+            input#email.input(type='email' name='Email') 
+          a#create.btn(href='/user/create_user') Create Staff
 

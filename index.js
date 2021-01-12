@@ -10,12 +10,18 @@ const sessionMiddleware = require('./middleware/session.middleware');
 const signup = require('./router/signup.router');
 const product = require('./router/product.router');
 const cart = require('./router/cart.router');
+const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 3000;
+
+// kết nối tới mongoose
+mongoose.connect(process.env.MONGO_URL);
+// ép mongoose sử dụng thư viện promise toàn cục
+// mongoos.Promise = global.Promise;
 
 app.set('view engine', 'pug');
 app.set("views", "./views");
@@ -31,7 +37,8 @@ app.use('/user', authMiddleware.requireAuth, user);
 // Nếu chưa login lần nào thì phải cho login r mới được thực hiện các thao tác khác
 app.use('/login', login);
 app.use('/signUp', signup);
-app.use('/product', authMiddleware.requireAuth, product);
+// app.use('/product', authMiddleware.requireAuth, product);
+app.use('/product', product);
 app.use('/cart', cart);
 
 app.get('/', (req, res) => {
