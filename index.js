@@ -3,12 +3,14 @@ require('dotenv').config();
 // process.env : được dùng để gọi biến môi trường
 
 const express = require('express');
-const user = require('./router/user.router');
+// const user = require('./router/user.router');
 const login = require('./router/login.router');
 const authMiddleware = require('./middleware/auth.login.middleware');
 const sessionMiddleware = require('./middleware/session.middleware');
 const signup = require('./router/signup.router');
-const product = require('./router/product.router');
+// const product = require('./router/product.router');
+const productApi = require('./api/routers/product.router');
+const userApi = require('./api/routers/user.router');
 const cart = require('./router/cart.router');
 const mongoose = require('mongoose');
 
@@ -33,12 +35,14 @@ app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static('public'));
 // phải có thằng này để nó có thể đọc các file css img ....
 app.use(sessionMiddleware);
-app.use('/user', authMiddleware.requireAuth, user);
+// app.use('/user', authMiddleware.requireAuth, userApi);
+app.use('/user', userApi);
 // Nếu chưa login lần nào thì phải cho login r mới được thực hiện các thao tác khác
 app.use('/login', login);
 app.use('/signUp', signup);
 // app.use('/product', authMiddleware.requireAuth, product);
-app.use('/product', product);
+// app.use('/product', product);
+app.use('/product', productApi);
 app.use('/cart', cart);
 
 app.get('/', (req, res) => {

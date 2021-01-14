@@ -13,5 +13,5 @@ module.exports.index = async (req, res) => {
         res.json({ message: err });
     }
 
-    // chưa làm phân trango
+    // chưa làm phân trang
 }

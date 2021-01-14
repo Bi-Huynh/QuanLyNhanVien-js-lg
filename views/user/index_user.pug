@@ -4,8 +4,8 @@ block content
   h1 user
   main.container
     nav.nav-bar
-      form.search(action='/user/search' method='GET')
-        input#searchStaff.search-staff(type='text' name='searchStaff' placeholder='Search Staff')
+      form.search(action='/user/filter' method='GET')
+        input#searchStaff.search-staff(type='text' name='q' placeholder='Search Staff')
         i.fa.fa-search(aria-hidden='true')
       .list
         table#listStaff.table
