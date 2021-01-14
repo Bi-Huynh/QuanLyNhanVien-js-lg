@@ -11,32 +11,25 @@ module.exports.addToCart = async (req, res) => {
         return;
     }
 
-    await Session.findById(sessionID).exec((err, session) => {
-        // tìm sessionID trong session để xem có session được gửi lên hay không
-        if (err) {
-            // nếu không tìm thấy session thì báo lỗi.
-            console.log(`Không tìm thấy sessionID, err: ${err}`);
-            return;
-        }
-
+    try {
+        let session = await Session.findById(sessionID);
         let product = session.cart.find(i => i._id == productID);
 
         if (!product) {
-            session.cart = {
+            session.cart.push({
                 _id: productID,
                 amount: 1
-            }
+            });
         } else {
             product.amount += 1;
         }
 
-        session.save(err => {
-            if (err) {
-                console.log(err);
-                throw err;
-            }
-        });
-    });
+        let saveSession = await session.save();
+        console.log('save session success');
+
+    } catch (err) {
+        res.json({ message: err });
+    }
 
     res.redirect('/product');
 }

@@ -5,48 +5,34 @@ const mongoose = require('mongoose');
 const Staff = require('../model/staff.model');
 
 module.exports.index = async (req, res) => {
-    await Staff.find({})
-        .sort({ 'name.first': -1 })
-        .exec((err, staffs) => {
-            if (err) {
-                console.error(err);
-                res.render('user/index_user');
-            }
-
-            if (staffs.length == 0) {
-                res.render('user/index_user');
-            }
-            else {
-                res.render('user/index_user', {
-                    _listStaff: staffs
-                });
-            }
+    try {
+        let staffs = await Staff.find({}).sort({ 'name.first': -1 });
+        res.render('user/index_user', {
+            _listStaff: staffs
         });
+    } catch (err) {
+        res.json({ message: err });
+    }
 }
 
 module.exports.search = async (req, res) => {
     let query = req.query.searchStaff;
 
-    // cách viết 1
-    // let arrStaff = await Staff.find({ 'name.first': { $regex: query, $options: 'i' } }).exec();
-    // // `/.../i` không phân biệt hoa thường
+    if (!query) {
+        console.log('No search');
+        return;
+    }
 
-    // res.render('user/index_user', {
-    //     _listStaff: arrStaff
-    // });
-
-    // cách viết 2
-    await Staff.find({ name: { first: { $regex: query, $options: 'i' } } })
-        .sort({ 'name.first': -1 })
-        .exec((err, staffs) => {
-            if (err) {
-                console.log(err);
-                throw err;
-            }
-            res.render('user/index_user', {
-                _listStaff: staffs
-            });
+    try {
+        // { name: { first: { $regex: query, $options: 'i' } }
+        let staffs = await Staff.find({ 'name.first': { $regex: query, $options: 'i' } })
+            .sort({ 'name.first': -1 });
+        res.render('user/index_user', {
+            _listStaff: staffs
         });
+    } catch (err) {
+        res.json({ message: err });
+    }
 }
 
 module.exports.viewCreate = (req, res) => {
@@ -56,54 +42,37 @@ module.exports.viewCreate = (req, res) => {
 module.exports.getID = async (req, res) => {
     // sử dụng địa chỉ có tên là 'Router parameters'
     let userID = req.params.userID;
-    // await Staff.findById(userID, async (err, user) => {
-    //     let arrStaff = await Staff.find({});
 
-    //     if (err) {
-    //         res.render('user/index_user', {
-    //             _listStaff: arrStaff
-    //         });
-    //         console.error(err);
-    //         throw err;
-    //     }
+    if (!userID) {
+        console.log("userID undifine");
+        return;
+    }
 
-    //     res.render('user/index_user', {
-    //         _informationStaff: user,
-    //         _listStaff: arrStaff
-    //     });
-    // });
-
-    await Staff.findById(userID)
-        .exec((err, user) => {
-            if (err) {
-                res.render('user/index_user', {
-                    _listStaff: arrStaff
-                });
-
-                console.error.bind(err);
-                throw err;
-            }
-
-            res.render('user/index_user', {
-                _informationStaff: user,
-                _listStaff: arrStaff
-            });
+    try {
+        let arrStaff = await Staff.find({});
+        let user = await Staff.findById(userID);
+        res.render('user/index_user', {
+            _informationStaff: user,
+            _listStaff: arrStaff
         });
+    } catch (err) {
+        res.json({ message: err });
+    }
 }
 
-module.exports.postCreate = (req, res) => {
+module.exports.postCreate = async (req, res) => {
     let newStaff = new Staff({
         _id: new mongoose.Types.ObjectId(),
-        name: req.body.name,
+        name: { first: req.body.name },
         img: req.file.filename
     });
 
-    newStaff.save(err => {
-        if (err) {
-            console.log(err);
-            throw err;
-        }
-    });
+    try {
+        let staff = await newStaff.save();
+        console.log(staff);
+    } catch (err) {
+        res.json({ message: err });
+    }
 
     res.redirect('/user');
 }

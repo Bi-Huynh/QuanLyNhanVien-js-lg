@@ -3,7 +3,6 @@ module.exports.index = (req, res) => {
 }
 
 module.exports.postLogin = (req, res) => {
-    let id = req.staff;
     res.cookie('userID', req.staff, {
         signed: true
     });

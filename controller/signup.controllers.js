@@ -11,11 +11,7 @@ module.exports.index = (req, res) => {
     res.render('signUp/index_signup');
 }
 
-module.exports.postSignUp = (req, res) => {
-    // tạo account
-    // let id = account.value().length + 1;
-    // let password = md5(req.account.Password);
-    // account.push({ idStaff: id, userName: req.account.UserName, password: password }).write();
+module.exports.postSignUp = async (req, res) => {
     let errors = [];
 
     if (req.body.Password !== req.body.RetypePassword) {
@@ -26,15 +22,14 @@ module.exports.postSignUp = (req, res) => {
         return;
     }
 
-    let staff = new Staff({
-        _id: new mongoose.Types.ObjectId()
-    });
+    let staff = new Staff();
 
-    staff.save((err) => {
-        if (err) {
-            throw err;
-        }
-    });
+    try {
+        let saveStaff = await staff.save();
+        console.log("save staff success");
+    } catch (err) {
+        res.json({ message: err });
+    }
 
     let account = new Account({
         _id: new mongoose.Types.ObjectId(),
@@ -43,11 +38,12 @@ module.exports.postSignUp = (req, res) => {
         password: md5(req.body.Password)
     });
 
-    account.save((err) => {
-        if (err) {
-            throw err;
-        }
-    })
+    try {
+        let saveAccount = await account.save();
+        console.log("save staff success");
+    } catch (err) {
+        res.json({ message: err });
+    }
 
     res.render('login/index_login');
 }
