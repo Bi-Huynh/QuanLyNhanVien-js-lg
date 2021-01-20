@@ -5,7 +5,7 @@ block content
   main.container
     nav.nav-bar
       form.search(action='/user/search' method='GET')
-        input#searchStaff.search-staff(type='text' name='searchStaff' placeholder='Search Staff')
+        input#searchStaff.search-staff(type='text' name='q' placeholder='Search Staff')
         i.fa.fa-search(aria-hidden='true')
       .list
         table#listStaff.table
@@ -42,5 +42,5 @@ block content
             .information
             lable(for='email') Email:
             input#email.input(type='email' name='Email') 
-          a#create.btn(href='/user/create_user') Create Staff
+        a#create.btn(href='/user/create') Create Staff
 

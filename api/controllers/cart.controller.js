@@ -1,5 +1,4 @@
-// const db = require('../config/db');
-const Session = require('../model/session.model');
+const Session = require('../../model/session.model');
 
 module.exports.addToCart = async (req, res) => {
     let productID = req.params.productID;

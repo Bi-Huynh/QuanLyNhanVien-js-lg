@@ -3,13 +3,18 @@ require('dotenv').config();
 // process.env : được dùng để gọi biến môi trường
 
 const express = require('express');
-const user = require('./router/user.router');
-const login = require('./router/login.router');
+// const user = require('./router/user.router');
+// const login = require('./router/login.router');
 const authMiddleware = require('./middleware/auth.login.middleware');
 const sessionMiddleware = require('./middleware/session.middleware');
-const signup = require('./router/signup.router');
-const product = require('./router/product.router');
-const cart = require('./router/cart.router');
+// const signup = require('./router/signup.router');
+// const product = require('./router/product.router');
+// const cart = require('./router/cart.router');
+const loginApi = require('./api/routers/login.router');
+const signupApi = require('./api/routers/signup.router');
+const productApi = require('./api/routers/product.router');
+const userApi = require('./api/routers/user.router');
+const cartApi = require('./api/routers/cart.router');
 const mongoose = require('mongoose');
 
 const bodyParser = require('body-parser');
@@ -33,13 +38,15 @@ app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(express.static('public'));
 // phải có thằng này để nó có thể đọc các file css img ....
 app.use(sessionMiddleware);
-app.use('/user', authMiddleware.requireAuth, user);
+app.use('/user', authMiddleware.requireAuth, userApi);
+// app.use('/user', userApi);
 // Nếu chưa login lần nào thì phải cho login r mới được thực hiện các thao tác khác
-app.use('/login', login);
-app.use('/signUp', signup);
+app.use('/login', loginApi);
+app.use('/signUp', signupApi);
 // app.use('/product', authMiddleware.requireAuth, product);
-app.use('/product', product);
-app.use('/cart', cart);
+// app.use('/product', product);
+app.use('/product', authMiddleware.requireAuth, productApi);
+app.use('/cart', authMiddleware.requireAuth, cartApi);
 
 app.get('/', (req, res) => {
     res.render('login/index_login');
