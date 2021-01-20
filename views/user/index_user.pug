@@ -4,7 +4,7 @@ block content
   h1 user
   main.container
     nav.nav-bar
-      form.search(action='/user/filter' method='GET')
+      form.search(action='/user/search' method='GET')
         input#searchStaff.search-staff(type='text' name='q' placeholder='Search Staff')
         i.fa.fa-search(aria-hidden='true')
       .list
@@ -42,5 +42,5 @@ block content
             .information
             lable(for='email') Email:
             input#email.input(type='email' name='Email') 
-          a#create.btn(href='/user/create_user') Create Staff
+        a#create.btn(href='/user/create') Create Staff
 

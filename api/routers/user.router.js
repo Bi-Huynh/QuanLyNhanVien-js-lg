@@ -11,12 +11,13 @@ const router = express.Router();
 router.get('/', controllerUser.index);
 
 // tìm kiếm nhân viên theo tên
-router.get('/filter', controllerUser.search);
+router.get('/search', controllerUser.search);
+
+// chuyển dòng này xuống phía dưới /:userID thì nó sẽ bị lỗi, KHÔNG HIỂU. Tìm hiểu thêm về lỗi này
+router.get('/create', controllerUser.viewCreate);
 
 // bấm vô 1 nhân viên để xem thông tin nhân viên đó
 router.get('/:userID', controllerUser.getID);
-
-router.get('/create', controllerUser.viewCreate);
 
 // lưu thông tin nhân viên mới
 router.post('/create',

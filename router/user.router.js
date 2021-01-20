@@ -13,13 +13,13 @@ router.get('/', controllerUser.index);
 // tìm kiếm nhân viên theo tên
 router.get('/search', controllerUser.search);
 
-router.get('/create_user', controllerUser.viewCreate);
+router.get('/create', controllerUser.viewCreate);
 
 // bấm vô 1 nhân viên để xem thông tin nhân viên đó
 router.get('/:userID', controllerUser.getID);
 
 // lưu thông tin nhân viên mới
-router.post('/create_user',
+router.post('/create',
     upload.single('img'),
     validateUser.postCreate,
     controllerUser.postCreate
